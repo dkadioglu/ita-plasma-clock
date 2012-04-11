@@ -259,12 +259,12 @@ class PlasmaQlock(plasmascript.Applet):
         self.old_minute = 0
 
         self.bg_color = QBrush(
-                        QColor(0xA8, 0xD1, 0x1D, 200))
+                        QColor(0x00, 0x00, 0x00, 200))
         self.normal_pen = QPen()
-        self.normal_pen.setColor(QColor(0x99,0x99,0x99))
+        self.normal_pen.setColor(QColor(0x29,0x29,0x29))
         self.highl_pen  = QPen()
         self.highl_pen.setColor(QColor(255,255,255))
-        self.language = 0
+        self.language = 2
 
     def init(self):
         self.setHasConfigurationInterface(True)
@@ -276,13 +276,13 @@ class PlasmaQlock(plasmascript.Applet):
         font_sz = config.readEntry('tx_font_sz', 14).toInt()[0]
         self.tx_font = QFont(font_nm, font_sz)
 
-        r = config.readEntry('bg_color_r', 0xA8).toInt()[0]
-        g = config.readEntry('bg_color_g', 0xD1).toInt()[0]
-        b = config.readEntry('bg_color_b', 0x1D).toInt()[0]
+        r = config.readEntry('bg_color_r', 0x00).toInt()[0]
+        g = config.readEntry('bg_color_g', 0x00).toInt()[0]
+        b = config.readEntry('bg_color_b', 0x00).toInt()[0]
         a = config.readEntry('bg_color_a', 200).toInt()[0]
         self.bg_color = QBrush(QColor(r, g, b, a))
 
-        self.language = config.readEntry('language', 0).toInt()[0]
+        self.language = config.readEntry('language', 2).toInt()[0]
 
         self.update_clock()
 
